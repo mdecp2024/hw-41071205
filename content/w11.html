@@ -142,70 +142,40 @@ img.add_border {
           
         </header>
     <div id="tipue_search_content">w10 << <a href='w10.html'>Previous</a> <a href='w12.html'>Next</a> >> w12<br /><h1>w11</h1>
-<p><a href="./../downloads/circle w11-2.py">/downloads/circle w11-2.py</a></p>
 <p><a href="./../downloads/gistfile3.txt">/downloads/gistfile3.txt</a></p>
+<p><a href="./../downloads/gistfile2.txt">/downloads/gistfile2.txt</a></p>
 <p><a href="./../downloads/gistfile1.txt">/downloads/gistfile1.txt</a></p>
+<p><a href="https://mdecp2024.github.io/hw-41071205/content/Brython?src=https://mdecp2024.github.io/hw-41071205/downloads/gistfile3.txt">題目一</a></p>
+<p><span class="hljs-keyword">def</span> <span class="hljs-title function_">print_circle</span>(<span class="hljs-params">radius</span>): //定義了一個名為 <code>print_circle</code> 的函數，接受一個參數 <code>radius</code>，表示圓的半徑。</p>
+<p>diameter = <span class="hljs-number">2</span> * radius //圓的直徑等於半徑的兩倍。這個值用於確定繪圖的範圍。</p>
+<p><span class="hljs-keyword">for</span> y <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(diameter + <span class="hljs-number">1</span>): <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(diameter + <span class="hljs-number">1</span>): //使用兩個巢狀迴圈分別遍歷畫布中的每個點 <code>(x, y)，</code>外層迴圈控制垂直方向 (<code>y</code>)，內層迴圈控制水平方向 (<code>x</code>)，<code>range(diameter + 1)</code> 的範圍確保迴圈涵蓋直徑的所有點，外加一個點的範圍（因為範圍是從 0 開始的）。</p>
+<p><span class="hljs-keyword">if</span> (x - radius)**<span class="hljs-number">2</span> + (y - radius)**<span class="hljs-number">2</span> &lt;= radius**<span class="hljs-number">2</span>:</p>
+<ul>
+<li>
+<p>使用圓的標準方程式 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>−</mo><mi>h</mi><msup><mo stretchy="false">)</mo><mn>2</mn></msup><mo>+</mo><mo stretchy="false">(</mo><mi>y</mi><mo>−</mo><mi>k</mi><msup><mo stretchy="false">)</mo><mn>2</mn></msup><mo>=</mo><msup><mi>r</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">(x - h)^2 + (y - k)^2 = r^2</annotation></semantics></math></span><span aria-hidden="true" class="katex-html"><span class="base"><span class="strut"></span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mspace"></span><span class="mbin">−</span><span class="mspace"></span></span><span class="base"><span class="strut"></span><span class="mord mathnormal">h</span><span class="mclose">)<span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist"><span><span class="pstrut"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace"></span><span class="mbin">+</span><span class="mspace"></span></span><span class="base"><span class="strut"></span><span class="mopen">(</span><span class="mord mathnormal">y</span><span class="mspace"></span><span class="mbin">−</span><span class="mspace"></span></span><span class="base"><span class="strut"></span><span class="mord mathnormal">k</span><span class="mclose">)<span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist"><span><span class="pstrut"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace"></span><span class="mrel">=</span><span class="mspace"></span></span><span class="base"><span class="strut"></span><span class="mord"><span class="mord mathnormal">r</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist"><span><span class="pstrut"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span>，判斷點 <code>(x, y)</code> 是否位於以 <code>(radius, radius)</code> 為圓心，半徑為 <code>radius</code> 的圓內。</p>
+這裡的 <code>(radius, radius)</code> 是圓心坐標，因為畫布以左上角 <code>(0, 0)</code> 為原點，圓心需要偏移到畫布中央。如果該點在圓內或圓上（小於等於半徑的平方），則執行下一步。</li>
+</ul>
+<p><span class="hljs-built_in">print</span>(<span class="hljs-string">'*'</span>, end=<span class="hljs-string">''</span>) //如果點位於圓內，輸出星號 (<code>*</code>)，<code>end=''</code> 表示輸出的星號後不換行，使圖形在一行中連續繪製。</p>
+<p><span class="hljs-built_in">print</span>(<span class="hljs-string">' '</span>, end=<span class="hljs-string">''</span>) //如果點不在圓內，輸出空格 (<code> </code>)來填充空白區域。</p>
+<div class="contain-inline-size rounded-md border-[0.5px] border-token-border-medium relative bg-token-sidebar-surface-primary dark:bg-gray-950">
+<div class="overflow-y-auto p-4" dir="ltr"><code class="!whitespace-pre hljs language-python">print_circle(<span class="hljs-number">20</span>) //</code>呼叫 <code>print_circle</code> 函數，並將半徑設為 20。</div>
+</div>
+<p></p>
 <p><a href="https://mdecp2024.github.io/hw-41071205/content/Brython?src=https://mdecp2024.github.io/hw-41071205/downloads/gistfile1.txt">題目二</a></p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from browser import html
-from browser import document as doc
-
-# 建立畫布
-canvas = html.CANVAS(width=400, height=400)
-brython_div = doc["brython_div1"]
-brython_div &lt;= canvas
-
-# 每一格的 pixel 數
-gs = 20
-
-ctx = canvas.getContext("2d")
-
-def draw_pixel(x, y, color="black"):
-    """畫一個小方格，表示點陣的單一像素"""
-    ctx.fillStyle = color
-    ctx.fillRect(x * gs, y * gs, gs, gs)
-
-def draw_circle_filled(cx, cy, radius, color="blue"):
-    """繪製內部填滿的點陣圓形"""
-    x = 0
-    y = radius
-    d = 1 - radius  # 決策變數初始化
-
-    while x &lt;= y:
-        # 填滿圓的一段橫線
-        for i in range(cx - x, cx + x + 1):
-            draw_pixel(i, cy + y, color)
-            draw_pixel(i, cy - y, color)
-        for i in range(cx - y, cx + y + 1):
-            draw_pixel(i, cy + x, color)
-            draw_pixel(i, cy - x, color)
-
-        # 中點演算法的決策
-        if d &lt; 0:  # 選擇 E 點
-            d = d + 2 * x + 3
-        else:  # 選擇 SE 點
-            d = d + 2 * (x - y) + 5
-            y -= 1
-        x += 1
-
-# 繪製圓形網格
-def grid(width, height, grid_pix):
-    for i in range(width):
-        for j in range(height):
-            ctx.strokeStyle = "lightgrey"
-            ctx.strokeRect(i * grid_pix, j * grid_pix, grid_pix, grid_pix)
-
-# 畫網格
-grid(20, 20, gs)
-
-# 畫填滿的點陣圓形
-draw_circle_filled(10, 10, 6, "blue")</pre>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">n = 11
-space = '_'
-center = n // 2
-#print(center)
-for y in range(n):
-    for x in range(n):
-        print("(", x, ", ", y, ")",sep="")</pre>
+<p></p>
+<ul>
+<li>建立了一個 HTML 畫布 (<code>canvas</code>)。</li>
+<li>定義了兩個函數：
+<ul>
+<li>一個用於繪製單個像素（小方格）。</li>
+<li>一個用於繪製填滿的圓形（利用點陣演算法）。</li>
+</ul>
+</li>
+<li>使用中點演算法（Midpoint Circle Algorithm）來繪製點陣圓形。</li>
+<li>最後，顯示網格背景和填滿的圓形。</li>
+</ul>
+<p></p>
+<p></p>
 <p><br/><br/></p><br />w10 << <a href='w10.html'>Previous</a> <a href='w12.html'>Next</a> >> w12</div>
         
     <!-- footer -->
