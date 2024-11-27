@@ -1,0 +1,29 @@
+from browser import html
+from browser import document as doc
+
+canvas = html.CANVAS(width = 400, height = 400)
+brython_div = doc ["brython_div1"]
+brython_div <= canvas
+
+gs = 20
+
+ctx = canvas.getContext("2d")
+
+width = 11
+height = 11
+
+'''
+ctx.lineWidth = 1
+ctx.strokeStyle = "#9933ff"
+ctx.beginPath()
+
+ctx.rect(0,0,150,100)
+ctx.stroke()
+'''
+for i in range(width):
+    for j in range(height):
+       ctx.lineWidth = 1
+    ctx.strokeStyle = "#9933ff"
+    ctx.beginPath();
+    ctx.rect(i*gs,j*gs,gs,gs)
+    ctx.stroke();
