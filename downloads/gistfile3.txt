@@ -1,0 +1,16 @@
+def print_circle(radius):
+    # 圓的直徑
+    diameter = 2 * radius
+    
+    # 遍歷每個點
+    for y in range(diameter + 1):
+        for x in range(diameter + 1):
+            # 判斷點 (x, y) 是否在圓的範圍內
+            if (x - radius)**2 + (y - radius)**2 <= radius**2:
+                print('*', end='')  # 圓內部顯示星號
+            else:
+                print(' ', end='')  # 圓外部顯示空格
+        print()  # 換行
+
+# 呼叫函數，傳入半徑
+print_circle(20)
