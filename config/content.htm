@@ -253,15 +253,116 @@ for y in range(n):
 <p><a href="https://mdecp2024.github.io/hw-41071205/content/Brython?src=https://gist.githubusercontent.com/41071205/4f1174e32917bab1b95876b586561c58/raw/240c4947b10834f2ba9de740da8c0cc6c26e45ca/for%2520loop%2520with%2520if...==,%2520else">for loop with if...==.../else</a></p>
 <p><a href="https://mdecp2024.github.io/hw-41071205/content/Brython?src=https://gist.githubusercontent.com/41071205/63e4de959e0d426d008216157652f80a/raw/71a6965d9aa398f17a644adb8e73599e0a00f346/for%2520loop%2520for%2520searching">For loop for searching</a></p>
 <h2>w13</h2>
-<p><a href="https://mdecp2024.github.io/hw-41071205/content/Brython?src=https://gist.githubusercontent.com/41071205/13356b1ad1556fbc7169c624284ce88f/raw/c823a4d77a70ffca88eabff86bc554df80f65517/rectangle*2">rectangle</a></p><h1>HW 2</h1>
+<p><a href="https://mdecp2024.github.io/hw-41071205/content/Brython?src=https://gist.githubusercontent.com/41071205/13356b1ad1556fbc7169c624284ce88f/raw/c823a4d77a70ffca88eabff86bc554df80f65517/rectangle*2">rectangle</a></p>
+<p></p>
+<p></p>
+<div id="brython_div1"></div>
+<!-- 導入 brython 程式庫 -->
+<p>
+<script src="/static/brython.js"></script>
+<script src="/static/brython_stdlib.js"></script>
+</p>
+<!-- 啟動 Brython -->
+<p>
+<script>
+window.onload=function(){
+brython({debug:1, pythonpath:['./../cmsimde/static/','./../downloads/py/']});
+}
+</script>
+<script type="text/python3">
+from browser import html
+from browser import document as doc
+
+# 利用 html 建立 canvas 超文件物件
+canvas = html.CANVAS(width=400, height=400)
+brython_div = doc["brython_div1"]
+brython_div <= canvas
+
+ctx = canvas.getContext("2d")
+ctx.lineWidth = 1
+
+# 繪製兩個矩形
+ctx.strokeStyle = 'red'  # 設定矩形顏色為紅色
+ctx.beginPath() 
+ctx.rect(10, 10, 200, 200)
+ctx.rect(110, 110, 200, 200)
+ctx.stroke()
+
+# 繪製對角線，顏色設定為藍色
+ctx.strokeStyle = 'blue'  # 設定對角線顏色為藍色
+ctx.beginPath() 
+ctx.moveTo(10, 10)
+ctx.lineTo(210, 210)
+ctx.stroke()
+</script>
+</p><h3>w13_ai</h3>
+<p><a href="https://mdecp2024.github.io/hw-41071205/content/Brython?src=https://gist.githubusercontent.com/41071205/a961b39ffeba9af1904277ff5b1ed8e6/raw/2e87636875edbe40350ae9db6f891cfb5a90018e/shape%2520combination">shape combination</a></p>
+<div id="brython_div1"></div>
+<!-- 導入 brython 程式庫 -->
+<p>
+<script src="/static/brython.js"></script>
+<script src="/static/brython_stdlib.js"></script>
+</p>
+<!-- 啟動 Brython -->
+<p>
+<script>
+window.onload=function(){
+brython({debug:1, pythonpath:['./../cmsimde/static/','./../downloads/py/']});
+}
+</script>
+<script type="text/python3">
+from browser import html
+from browser import document as doc
+import math
+
+# 利用 html 建立 canvas 超文件物件
+canvas = html.CANVAS(width=400, height=400)
+brython_div = doc["brython_div1"]
+brython_div <= canvas
+
+# 获取绘图上下文 (2D)
+ctx = canvas.getContext("2d")
+ctx.lineWidth = 1
+
+# 繪製紅色矩形
+ctx.strokeStyle = 'red'  # 設定矩形顏色為紅色
+ctx.beginPath()
+x1, y1, side_length1 = 50, 50, 200  # 第一個矩形的左上角坐標和邊長
+ctx.rect(x1, y1, side_length1, side_length1)
+x2, y2, side_length1 = 150, 150, 200
+ctx.rect(x2, y2, side_length1, side_length1)# 繪製紅色方形
+ctx.stroke()
+
+# 繪製對角線，顏色設定為藍色
+ctx.strokeStyle = 'blue'  # 設定對角線顏色為藍色
+ctx.beginPath()
+ctx.moveTo(x1, y1)
+ctx.lineTo(x1 + side_length1, y1 + side_length1)
+ctx.stroke()
+
+# 外接圓形，圓心與方形中心對齊，半徑等於方形的對角線的一半
+radius1 = side_length1 * math.sqrt(2) / 2  # 圓形半徑等於方形對角線的一半
+cx1, cy1 = x1 + side_length1 / 2, y1 + side_length1 / 2  # 圓心坐標
+radius2 = side_length1 * math.sqrt(2) / 2  # 圓形半徑等於方形對角線的一半
+cx2, cy2 = x2 + side_length1 / 2, y2 + side_length1 / 2
+
+# 繪製外接圓形
+ctx.strokeStyle = 'black'  # 設定圓形顏色
+ctx.beginPath()
+ctx.arc(cx1, cy1, radius1, 0, 2 * math.pi)  # 以方形中心為圓心，半徑為radius1
+ctx.stroke()
+ctx.beginPath()
+ctx.arc(cx2, cy2, radius2, 0, 2 * math.pi)  # 以方形中心為圓心，半徑為radius1
+ctx.stroke()
+</script>
+</p><h1>HW 2</h1>
 <h4>主題: Python 的數列、判斷式與重複迴圈 (20%)<span style="background-color: #ffff99;"><br/></span></h4>
 <p style="padding-left: 30px;">Python 課程教材: <a href="https://www.learnpythonwithjupyter.com/">https://www.learnpythonwithjupyter.com/</a> - PART 2 and Part 3</p>
 <hr/>
 <p>延續 HW 1 網頁資料整理與程式練習方法, 整理下列內容 (20%):</p>
 <p>PART 2: Introduction to lists and if/else statements</p>
 <p>PART 3: Introduction to the for loop</p>
-<p>完成上述流程整理後, 請將 HW2 自評分數輸入 cp2024 自評表單中.</p>
-<h2>HW 2 Exam</h2>
+<p>完成上述流程整理後, 請將 HW2 自評分數輸入 cp2024 自評表單中.</p><h2>HW 2 Exam</h2>
 <p>每六人為一組進行協同程式練習</p>
 <p>透過 Jupyterlab 協同網頁, 輪流指定各組編寫 HW 2 相關的程式練習, 以及網頁內容 (localhost 與 Codespaces 環境)編輯.</p>
 <h1>HW 3</h1>
