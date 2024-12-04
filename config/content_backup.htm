@@ -67,7 +67,7 @@
 <p><span>第二題：因用到較為高階的數學式，需要將數學程式編入進來，以使用語言，最後得到結果。</span></p>
 <p><span></span></p>
 <p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="315" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/jO01btzCEE0?si=LvmfkrgS0J02ILUF" title="YouTube video player" width="560"></iframe></p>
-<h3>w11</h3>
+<h2>w11_hw</h2>
 <p><a href="/downloads/gistfile4.txt">/downloads/gistfile4.txt</a></p>
 <p><a href="/downloads/gistfile3.txt">/downloads/gistfile3.txt</a></p>
 <p><a href="/downloads/gistfile2.txt">/downloads/gistfile2.txt</a></p>
@@ -111,8 +111,129 @@ for y in range(n):
     for x in range(n):
         print("(", x, ", ", y, ")",sep="")</pre>
 <p></p>
-<p><br/><br/></p>
-<h3>w12</h3>
+<p><br/><br/></p><h3>w12</h3>
+<p>一開始Jupyter跟Python不同的地方在於字串程式的呈現，Python需要Print指令才能將字串輸出在視窗上。input()指令功能：顯示提示文字，並等待用戶輸入。Print()是輸出字串，兩程式的呈現的部分會有不同，可能是brython輸出視窗的關係導致。再來是將右邊的字串丟給左邊的變數，print()時使用變數名稱，不必加雙冒號，即可輸出字串。靈活使用以上程式，利用input()輸入字串，再來用print()將字串輸出得到最後的結果。</p>
+<p>利用if…else…，利用變數決定字串的範圍，再用input()輸入字串，if我們想要的書有在範圍中，print(有，我們有賣)，else輸出(不，我們沒有賣)。</p>
+<p>利用input()、.append()以及.remove()輸入想加入或移除的字串，if物品重複，輸出(已經在購物清單中)，else加入新物品，if要移除清單中的物品，print(移除物品)，else輸出(此物品沒有在清單中)。</p>
+<p>index() 方法用於查找某個元素的索引值。如果元素不存在，通常會拋出異常。.pop()從列表中移除並返回指定位置的元素，<span>.insert()</span>在指定位置加入新的元素。</p>
+<p>正向索引：從 0 開始。負向索引：從 -1 開始（倒數第一個元素）。反轉列表：使用 [:: -1]。單個索引（如 senses[1]）可以直接修改特定位置的元素。</p>
+<p>+ 運算子：用於將兩個列表拼接成一個新列表。切片操作：用於從清單中提取部分元素，並結合 + 實現插入或合併。del 的作用：刪除清單中的某個元素或切片。刪除整個物件，使其從記憶體中移除。一旦使用 del 刪除了整個物件，再次訪問該物件會引發錯誤。</p>
+<p>friends = ["Geetha", "Luca", "Daisy", "Juhan"]</p>
+<p>創建包含朋友名字的列表。</p>
+<p>dishes = ["sushi", "burgers", "tacos", "pizza"]</p>
+<p>創建包含菜肴名稱的列表。</p>
+<p>print("My friends' names are:")</p>
+<p>列印一條說明。</p>
+<p>print(friends)</p>
+<p>輸出整個 friends 列表：</p>
+<p>for index in range(0, 4):</p>
+<p>外層迴圈，遍歷索引 0 到 3，對應每個朋友的名字。</p>
+<p>print("index: " + str(index))</p>
+<p>列印當前索引。</p>
+<p>print("friend: " + friends[index])</p>
+<p>列印當前索引對應的朋友名字。</p>
+<p>print("Their favorite dishes are:")</p>
+<p>列印說明，表示即將列出菜肴列表。</p>
+<p>print(dishes)</p>
+<p>輸出整個 dishes 列表：</p>
+<p>內層迴圈 1：for index in range(0, 4):</p>
+<p>遍歷菜肴清單中的每個索引。</p>
+<p>print("index: " + str(index))</p>
+<p>列印當前索引。</p>
+<p>print("dish: " + dishes[index])</p>
+<p>列印當前索引對應的菜肴名稱。</p>
+<p>內層迴圈 2：for index in range(0, 4):</p>
+<p>將朋友和對應菜肴匹配，按索引列印每個人最喜歡的菜。</p>
+<p>print("My friend " + friends[index] + "'s favorite dish is " + dishes[index])</p>
+<p>列印格式化字串，顯示朋友名字及其最喜歡的菜肴。</p>
+<p>for i in range(0, len(animals)):</p>
+<p>這行代碼使用 for 迴圈遍歷清單中的每個元素。</p>
+<p>range(0, len(animals)) 生成一個從 0 到 len(animals)（即 3）的整數序列，表示清單的索引。</p>
+<p>len(animals) 返回列表的長度（3），所以 range(0, 3) 就會生成 [0, 1, 2]，即迴圈會執行三次，分別訪問索引為 0、1 和 2 的元素。</p>
+<p>i 是當前迴圈的索引，表示當前訪問的是清單中的第幾個元素。</p>
+<p>代碼通過一個 <span>for</span> 迴圈遍歷動物列表，並在每個位置列印動物的名稱和其位置。</p>
+<p><span> </span></p>
+<p>列出清單內容與元素位置</p>
+<p><span>print(accessories)</span></p>
+<p><span>for i in range(len(accessories)):</span></p>
+<p><span>    print("The element " + accessories[i] + " is in position " + str(i))</span></p>
+<p>功能：</p>
+<p>輸出整個清單內容。</p>
+<p>逐一列出每個元素的名稱以及它在清單中的位置。</p>
+<p>輸出：</p>
+<p><span>['belt', 'hat', 'gloves', 'sunglasses', 'ring']</span></p>
+<p><span>The element belt is in position 0</span></p>
+<p><span>The element hat is in position 1</span></p>
+<p><span>The element gloves is in position 2</span></p>
+<p><span>The element sunglasses is in position 3</span></p>
+<p><span>The element ring is in position 4</span></p>
+<ol start="2">
+<li><span> </span>檢查元素長度是否為<span> 6</span></li>
+</ol>
+<p><span>for i in range(len(accessories)):</span></p>
+<p><span>    if len(accessories[i]) == 6:</span></p>
+<p><span>        print("The element " + accessories[i] + " is in position " + str(i) + " and it has 6 characters")</span></p>
+<p>功能：</p>
+<p>找出長度正好為<span> 6 </span>的元素，並列出其名稱與位置。</p>
+<p><span>The element gloves is in position 2 and it has 6 characters</span></p>
+<ol start="3">
+<li><span> </span>檢查元素長度是否小於<span> 6</span></li>
+</ol>
+<p><span>for i in range(len(accessories)):</span></p>
+<p><span>    if len(accessories[i]) &lt; 6:</span></p>
+<p><span>        print("The element " + accessories[i] + " is in position " + str(i) + " and it has less than 6 characters")</span></p>
+<p>功能：</p>
+<p>找出長度小於<span> 6 </span>的元素，並列出其名稱與位置。</p>
+<p><span>The element belt is in position 0 and it has less than 6 characters</span></p>
+<p><span>The element hat is in position 1 and it has less than 6 characters</span></p>
+<p><span>The element ring is in position 4 and it has less than 6 characters</span></p>
+<ol start="4">
+<li><span> </span>檢查元素長度是否大於<span> 6</span></li>
+</ol>
+<p><span>n_of_characters = 6</span></p>
+<p><span>for i in range(len(accessories)):</span></p>
+<p><span>    if len(accessories[i]) &gt; n_of_characters:</span></p>
+<p><span>        print("The element " + accessories[i] + " is in position " + str(i) + " and it has more than " + str(n_of_characters) + " characters")</span></p>
+<p>功能：</p>
+<p>找出長度大於<span> 6 </span>的元素，並列出其名稱與位置。</p>
+<p><span>The element sunglasses is in position 3 and it has more than 6 characters</span></p>
+<ol start="5">
+<li><span> </span>檢查元素長度是否不等於<span> 6</span></li>
+</ol>
+<p><span>for i in range(len(accessories)):</span></p>
+<p><span>    if len(accessories[i]) != n_of_characters:</span></p>
+<p><span>        print("The element " + accessories[i] + " is in position " + str(i) + " and it has a number of characters different from " + str(n_of_characters))</span></p>
+<p>功能：</p>
+<p>找出長度不等於<span> 6 </span>的元素，並列出其名稱與位置。</p>
+<p><span>The element belt is in position 0 and it has a number of characters different from 6</span></p>
+<p><span>The element hat is in position 1 and it has a number of characters different from 6</span></p>
+<p><span>The element sunglasses is in position 3 and it has a number of characters different from 6</span></p>
+<p><span>The element ring is in position 4 and it has a number of characters different from 6</span></p>
+<ol start="6">
+<li><span> </span>檢查位置是否小於或等於<span> 2</span></li>
+</ol>
+<p><span>position = 2</span></p>
+<p><span>for i in range(len(accessories)):</span></p>
+<p><span>    if i &lt;= position:</span></p>
+<p><span>        print("The element " + accessories[i] + " is in position " + str(i) + ", which is less than or equal to " + str(position))</span></p>
+<p>功能：</p>
+<p>找出位置小於或等於<span> 2 </span>的元素，並列出其名稱與位置。</p>
+<p>輸出：</p>
+<p><span>The element belt is in position 0, which is less than or equal to 2</span></p>
+<p><span>The element hat is in position 1, which is less than or equal to 2</span></p>
+<p><span>The element gloves is in position 2, which is less than or equal to 2</span></p>
+<ol start="7">
+<li><span> </span>檢查位置是否大於或等於<span> 2</span></li>
+</ol>
+<p><span>for i in range(len(accessories)):</span></p>
+<p><span>    if i &gt;= position:</span></p>
+<p><span>        print("The element " + accessories[i] + " is in position " + str(i) + ", which is at least " + str(position))</span></p>
+<p>功能：</p>
+<p>找出位置大於或等於<span> 2 </span>的元素，並列出其名稱與位置。</p>
+<p>輸出：</p>
+<p><span>The element gloves is in position 2, which is at least 2</span></p>
+<p><span>The element sunglasses is in position 3, which is at least 2</span></p>
+<p><span>The element ring is in position 4, which is at least 2</span></p>
 <p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="315" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/uyLBZ5sNkps?si=uA6XhVrRlAcHEscd" title="YouTube video player" width="560"></iframe></p>
 <p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="315" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/yKOnhXCX59U?si=Kq5laSuiEPtVeyA4" title="YouTube video player" width="560"></iframe></p>
 <p><a href="https://mdecp2024.github.io/hw-41071205/content/Brython?src=https://gist.githubusercontent.com/41071205/3f93720f8f48e4e9936cb6ee9eb8894e/raw/a98a5caed40c1217379fd3185ddbe60299106db4/string">Strings</a></p>
@@ -129,8 +250,7 @@ for y in range(n):
 <p><a href="https://mdecp2024.github.io/hw-41071205/content/Brython?src=https://gist.githubusercontent.com/41071205/f1a50af61ff12a67f9b623d588e10eaa/raw/0a2d54ea1fe7a17ad1b8d5a72174c9a63e3f750c/list%2520slicing%2520del">List slicing del</a></p>
 <p><a href="https://mdecp2024.github.io/hw-41071205/content/Brython?src=https://gist.githubusercontent.com/41071205/c22fdc603bbc0e315b7e5bae464def1c/raw/8a634e01415981820b8743524a8bcc5e79ffa204/for...in%2520range()">for...in range()</a></p>
 <p><a href="https://mdecp2024.github.io/hw-41071205/content/Brython?src=https://gist.githubusercontent.com/41071205/4f1174e32917bab1b95876b586561c58/raw/240c4947b10834f2ba9de740da8c0cc6c26e45ca/for%2520loop%2520with%2520if...==,%2520else">for loop with if...==.../else</a></p>
-<p><a href="https://mdecp2024.github.io/hw-41071205/content/Brython?src=https://gist.githubusercontent.com/41071205/63e4de959e0d426d008216157652f80a/raw/71a6965d9aa398f17a644adb8e73599e0a00f346/for%2520loop%2520for%2520searching">For loop for searching</a></p>
-<h1>HW 2</h1>
+<p><a href="https://mdecp2024.github.io/hw-41071205/content/Brython?src=https://gist.githubusercontent.com/41071205/63e4de959e0d426d008216157652f80a/raw/71a6965d9aa398f17a644adb8e73599e0a00f346/for%2520loop%2520for%2520searching">For loop for searching</a></p><h1>HW 2</h1>
 <h4>主題: Python 的數列、判斷式與重複迴圈 (20%)<span style="background-color: #ffff99;"><br/></span></h4>
 <p style="padding-left: 30px;">Python 課程教材: <a href="https://www.learnpythonwithjupyter.com/">https://www.learnpythonwithjupyter.com/</a> - PART 2 and Part 3</p>
 <hr/>
