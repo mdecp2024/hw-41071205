@@ -357,7 +357,64 @@ ctx.stroke()
 </script>
 </p><h3>w13_hw</h3>
 <p><a href="https://mdecp2024.github.io/hw-41071205/content/Brython?src=https://gist.githubusercontent.com/41071205/953809cf098c7404371e8dd9f8b9d9bd/raw/fee3a378fdb737f9f6d4cbff80cf340bb0ac8365/color">add color</a></p>
-<div id="brython_div1"></div>
+<div id="brython_div1">
+<p>這段程式碼主要利用 HTML5 的 Canvas 進行視覺化繪圖，並通過幾何運算和區域判斷來標示不同區域的顏色。以下是該程式的主要邏輯：</p>
+<ol>
+<li><strong>建立畫布</strong><strong> (Canvas)</strong>：</li>
+<ul>
+<li>設定了一個 600x600 的 Canvas 元素，並將其加入到 HTML 中。</li>
+</ul>
+<li><strong>繪製幾何圖形</strong>：</li>
+<ul>
+<li>繪製了兩個紅色邊框的正方形。</li>
+<li>在這兩個正方形內繪製了對角線 (藍色)。</li>
+<li>繪製了兩個圓形 (黑色)，其半徑設為 141.4（約等於正方形對角線的一半）。</li>
+</ul>
+<li><strong>判斷點的位置</strong>：</li>
+<ul>
+<li>利用數學公式和幾何規則，判斷點是否位於以下位置：</li>
+<ul>
+<li>圓內部</li>
+<li>正方形內部或外部</li>
+<li>線段上、線段上方或下方</li>
+<li>正方形的上下左右</li>
+</ul>
+</ul>
+<li><strong>區域著色邏輯</strong>：</li>
+<ul>
+<li>根據點所屬的幾何區域，為其設定不同的顏色。例如：</li>
+<ul>
+<li>在第一個圓內且位於正方形內部且對角線上方，著色為綠色。</li>
+<li>位於第一個圓內且正方形上方，著色為青色。</li>
+<li>第二個圓內但不在正方形內，根據方位著色為不同的淺色。</li>
+</ul>
+</ul>
+<li><strong>掃描並繪製</strong>：</li>
+<ul>
+<li>按像素掃描畫布中的每個點，通過 get_region_color 函式獲取該點的顏色，並在畫布上進行著色。</li>
+<li>每個像素被繪製為小圓點以顯示對應的顏色。</li>
+</ul>
+<li>
+<p><strong>多層區域劃分</strong>：</p>
+<ul>
+<li>將圓與正方形的交集進一步細化，區分不同組合的區域。</li>
+<li>利用列表 <code>regions</code> 收集點的屬性，避免多重嵌套。</li>
+</ul>
+</li>
+<li>
+<p><strong>顏色填充</strong>：</p>
+<ul>
+<li>每個區域設定了不同顏色，例如 <code>gray</code> 表示兩正方形內部的交集，<code>purple</code> 表示兩圓的交集但不在正方形內。</li>
+</ul>
+</li>
+<li>
+<p><strong>像素填充優化</strong>：</p>
+<ul>
+<li>使用 <code>fillRect</code> 填充像素代替繪製小圓點，提升性能。</li>
+</ul>
+</li>
+</ol>
+</div>
 <!-- 導入 brython 程式庫 -->
 <p>
 <script src="/static/brython.js"></script>
@@ -489,7 +546,8 @@ def scan_and_draw():
 # 開始掃描和標示
 scan_and_draw()
 </script>
-</p><h1>HW 2</h1>
+</p>
+<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="315" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/i-gMnxEtiAQ?si=yDOZIz5XYP6UTF40" title="YouTube video player" width="560"></iframe></p><h1>HW 2</h1>
 <h4>主題: Python 的數列、判斷式與重複迴圈 (20%)<span style="background-color: #ffff99;"><br/></span></h4>
 <p style="padding-left: 30px;">Python 課程教材: <a href="https://www.learnpythonwithjupyter.com/">https://www.learnpythonwithjupyter.com/</a> - PART 2 and Part 3</p>
 <hr/>
