@@ -296,7 +296,7 @@ ctx.lineTo(210, 210)
 ctx.stroke()
 </script>
 </p><h3>w13_ai</h3>
-<p><a href="https://mdecp2024.github.io/hw-41071205/content/Brython?src=https://gist.githubusercontent.com/41071205/a961b39ffeba9af1904277ff5b1ed8e6/raw/67d46f89f6c336c5bf2fada8d6a8e24fe2103a98/shape%2520combination">shape combination</a></p>
+<p><a href="https://mdecp2024.github.io/hw-41071205/content/Brython?src=https://gist.githubusercontent.com/41071205/a961b39ffeba9af1904277ff5b1ed8e6/raw/2e87636875edbe40350ae9db6f891cfb5a90018e/shape%2520combination">shape combination</a></p>
 <div id="brython_div1"></div>
 <!-- 導入 brython 程式庫 -->
 <p>
@@ -347,13 +347,146 @@ radius2 = side_length1 * math.sqrt(2) / 2  # 圓形半徑等於方形對角線�
 cx2, cy2 = x2 + side_length1 / 2, y2 + side_length1 / 2
 
 # 繪製外接圓形
-ctx.strokeStyle = 'green'  # 設定圓形顏色
+ctx.strokeStyle = 'black'  # 設定圓形顏色
 ctx.beginPath()
 ctx.arc(cx1, cy1, radius1, 0, 2 * math.pi)  # 以方形中心為圓心，半徑為radius1
 ctx.stroke()
 ctx.beginPath()
 ctx.arc(cx2, cy2, radius2, 0, 2 * math.pi)  # 以方形中心為圓心，半徑為radius1
 ctx.stroke()
+</script>
+</p><h3>w13_hw</h3>
+<p><a href="https://gist.githubusercontent.com/41071205/953809cf098c7404371e8dd9f8b9d9bd/raw/fee3a378fdb737f9f6d4cbff80cf340bb0ac8365/color">add color</a></p>
+<!-- 導入 brython 程式庫 -->
+<p>
+<script src="/static/brython.js"></script>
+<script src="/static/brython_stdlib.js"></script>
+</p>
+<!-- 啟動 Brython -->
+<p>
+<script>
+window.onload=function(){
+brython({debug:1, pythonpath:['./../cmsimde/static/','./../downloads/py/']});
+}
+</script>
+<script type="text/python3">
+from browser import html
+from browser import document as doc
+
+# 設置畫布
+canvas = html.CANVAS(width=600, height=600)
+brython_div = doc["brython_div1"]
+brython_div <= canvas
+
+ctx = canvas.getContext("2d")
+ctx.lineWidth = 1
+
+# 畫兩個矩形 (紅色邊框)
+ctx.strokeStyle = 'red'
+ctx.beginPath()
+ctx.rect(100, 100, 200, 200)
+ctx.rect(200, 200, 200, 200)
+ctx.stroke()
+
+# 畫對角線 (藍色)
+ctx.strokeStyle = 'blue'
+ctx.beginPath()
+ctx.moveTo(100, 100)
+ctx.lineTo(300, 300)
+ctx.stroke()
+
+# 畫兩個圓形 (黑色)
+ctx.strokeStyle = 'black'
+ctx.beginPath()
+ctx.arc(200, 200, 141.4, 0, 2 * 3.14)
+ctx.stroke()
+ctx.beginPath()
+ctx.arc(300, 300, 141.4, 0, 2 * 3.14)
+ctx.stroke()
+
+# 判斷點的位置
+def point_in_circle1(x, y):
+    cx, cy, r = 200, 200, 141.4
+    return (x - cx) ** 2 + (y - cy) ** 2 < r ** 2
+
+def point_in_circle2(x, y):
+    cx, cy, r = 300, 300, 141.4
+    return (x - cx) ** 2 + (y - cy) ** 2 < r ** 2
+
+def point_in_square1(x, y):
+    return 100 <= x <= 300 and 100 <= y <= 300
+
+def point_in_square2(x, y):
+    return 200 <= x <= 400 and 200 <= y <= 400
+
+def point_above_line(x, y):
+    return y < x
+
+def point_below_line(x, y):
+    return y > x
+
+# 取得點所屬區域的函式
+def get_region(x, y):
+    regions = []
+    if point_in_circle1(x, y):
+        regions.append("circle1")
+    if point_in_circle2(x, y):
+        regions.append("circle2")
+    if point_in_square1(x, y):
+        regions.append("square1")
+    if point_in_square2(x, y):
+        regions.append("square2")
+    if point_above_line(x, y):
+        regions.append("above_line")
+    if point_below_line(x, y):
+        regions.append("below_line")
+    return regions
+
+# 根據區域屬性決定顏色
+def get_region_color(x, y):
+    regions = get_region(x, y)
+
+    # 圓的交集區域
+    if "circle1" in regions and "circle2" in regions:
+        if "square1" in regions and "square2" in regions:
+            return "gray"  # 同時在兩個正方形內
+        elif "square1" in regions:
+            return "orange"  # 第一正方形內
+        elif "square2" in regions:
+            return "red"  # 第二正方形內
+        else:
+            return "purple"  # 僅在圓交集中
+
+    # 第一個圓內的顏色判定
+    if "circle1" in regions:
+        if "square1" in regions:
+            if "above_line" in regions:
+                return "blue"  # 第一正方形內且對角線上方
+            elif "below_line" in regions:
+                return "yellow"  # 第一正方形內且對角線下方
+        else:
+            return "cyan"  # 第一圓內但不在第一正方形內
+
+    # 第二個圓內的顏色判定
+    if "circle2" in regions:
+        if "square2" in regions:
+            return "green"  # 第二正方形內
+        else:
+            return "lightblue"  # 第二圓內但不在第二正方形內
+
+    return None  # 不符合條件則不著色
+
+# 繪製掃描點並著色
+def scan_and_draw():
+    for y in range(0, canvas.height):
+        for x in range(0, canvas.width):
+            color = get_region_color(x, y)
+            if color:
+                ctx.fillStyle = color
+                ctx.fillRect(x, y, 1, 1)  # 填充單像素方格
+
+# 開始掃描和標示
+scan_and_draw()
 </script>
 </p><h1>HW 2</h1>
 <h4>主題: Python 的數列、判斷式與重複迴圈 (20%)<span style="background-color: #ffff99;"><br/></span></h4>
