@@ -2,7 +2,7 @@
         <head>
         <title>cp_hw</title>
         <meta charset="utf-8">
-<meta property="head" content="H3">
+<meta property="head" content="H2">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap.min.css">
@@ -141,67 +141,8 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">w13 << <a href='w13.html'>Previous</a> <a href='w13_hw.html'>Next</a> >> w13_hw<br /><h1>w13_ai</h1>
-<p><a href="https://mdecp2024.github.io/hw-41071205/content/Brython?src=https://gist.githubusercontent.com/41071205/a961b39ffeba9af1904277ff5b1ed8e6/raw/2e87636875edbe40350ae9db6f891cfb5a90018e/shape%2520combination">shape combination</a></p>
-<div id="brython_div1"></div>
-<!-- 導入 brython 程式庫 -->
-<p>
-<script src="./../cmsimde/static/brython.js"></script>
-<script src="./../cmsimde/static/brython_stdlib.js"></script>
-</p>
-<!-- 啟動 Brython -->
-<p>
-<script>
-window.onload=function(){
-brython({debug:1, pythonpath:['./../cmsimde/static/','./../downloads/py/']});
-}
-</script>
-<script type="text/python3">
-from browser import html
-from browser import document as doc
-import math
-
-# 利用 html 建立 canvas 超文件物件
-canvas = html.CANVAS(width=400, height=400)
-brython_div = doc["brython_div1"]
-brython_div <= canvas
-
-# 获取绘图上下文 (2D)
-ctx = canvas.getContext("2d")
-ctx.lineWidth = 1
-
-# 繪製紅色矩形
-ctx.strokeStyle = 'red'  # 設定矩形顏色為紅色
-ctx.beginPath()
-x1, y1, side_length1 = 50, 50, 200  # 第一個矩形的左上角坐標和邊長
-ctx.rect(x1, y1, side_length1, side_length1)
-x2, y2, side_length1 = 150, 150, 200
-ctx.rect(x2, y2, side_length1, side_length1)# 繪製紅色方形
-ctx.stroke()
-
-# 繪製對角線，顏色設定為藍色
-ctx.strokeStyle = 'blue'  # 設定對角線顏色為藍色
-ctx.beginPath()
-ctx.moveTo(x1, y1)
-ctx.lineTo(x1 + side_length1, y1 + side_length1)
-ctx.stroke()
-
-# 外接圓形，圓心與方形中心對齊，半徑等於方形的對角線的一半
-radius1 = side_length1 * math.sqrt(2) / 2  # 圓形半徑等於方形對角線的一半
-cx1, cy1 = x1 + side_length1 / 2, y1 + side_length1 / 2  # 圓心坐標
-radius2 = side_length1 * math.sqrt(2) / 2  # 圓形半徑等於方形對角線的一半
-cx2, cy2 = x2 + side_length1 / 2, y2 + side_length1 / 2
-
-# 繪製外接圓形
-ctx.strokeStyle = 'black'  # 設定圓形顏色
-ctx.beginPath()
-ctx.arc(cx1, cy1, radius1, 0, 2 * math.pi)  # 以方形中心為圓心，半徑為radius1
-ctx.stroke()
-ctx.beginPath()
-ctx.arc(cx2, cy2, radius2, 0, 2 * math.pi)  # 以方形中心為圓心，半徑為radius1
-ctx.stroke()
-</script>
-</p><br />w13 << <a href='w13.html'>Previous</a> <a href='w13_hw.html'>Next</a> >> w13_hw</div>
+    <div id="tipue_search_content">w14_ex << <a href='w14_ex.html'>Previous</a> <a href='HW 2.html'>Next</a> >> HW 2<br /><h1>w15</h1>
+<p><a href="https://mdecp2024.github.io/hw-41071205/content/Brython?src=https://gist.githubusercontent.com/41071205/00165240b4ccc84bbf65fcba5474f7e2/raw/691da4eda0c20cb2da587230085ae211f6f99c03/gistfile1.txt">1加到100</a></p><br />w14_ex << <a href='w14_ex.html'>Previous</a> <a href='HW 2.html'>Next</a> >> HW 2</div>
         
     <!-- footer -->
       <div class="container">
