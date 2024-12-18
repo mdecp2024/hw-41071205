@@ -559,11 +559,11 @@ for i in range(1, 101):  # range(1, 101) 代表從 1 到 100
 # 輸出結果
 print(total)</pre>
 <p>題目二：<a href="https://mdecp2024.github.io/hw-41071205/content/Brython?src=https://gist.githubusercontent.com/41071205/0da72f22242e45741303d8b248c4800a/raw/1f8e080595fe0f99f3c746f21d6c391cf89f48bb/addto()">addto()</a></p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def addto(start, end):
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def addto(start, end): #加法或添加列表功能
     total = 0
     for i in range(start, end + 1):  # 從 start 到 end（包括 end）
         total += i
-    return total
+    return total #結果返回給調用
 
 # 調用 addto 函數，計算 1 到 100 的和
 result = addto(1, 100)
@@ -583,13 +583,14 @@ result = add_only_even(1, 100)</pre>
     total = 0
     for i in range(start, end + 1):
         # 如果數字中包含字符 '8'，跳過
-        if '8' in str(i):  # 判斷數字中是否包含字符 "8"
+        if '8' in str(i):  # 判斷數字中是否包含字符 "8"，str()將數據類型轉為字符串
             continue #用於跳過目前循環的剩餘部分，直接進入下一次循環
         total += i
     return total
 
 # 調用 add_aviod_8 函數，計算從 1 到 100 之間的總和，避开包含數字 "8" 的數字</pre>
-<p></p><h1>HW 2</h1>
+<p></p>
+<p>心得：利用for迴圈可以將計算式簡化，迅速的決定範圍。addto()可以當加法也可以是添加新字串到列表中，add_only_even()是將奇數以外的數字累加起來，add_only_odd()則相反，add_avoid_8()只要有數字"8"就會避開，不做計算。</p><h1>HW 2</h1>
 <h4>主題: Python 的數列、判斷式與重複迴圈 (20%)<span style="background-color: #ffff99;"><br/></span></h4>
 <p style="padding-left: 30px;">Python 課程教材: <a href="https://www.learnpythonwithjupyter.com/">https://www.learnpythonwithjupyter.com/</a> - PART 2 and Part 3</p>
 <hr/>
