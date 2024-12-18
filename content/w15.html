@@ -143,9 +143,44 @@ img.add_border {
         </header>
     <div id="tipue_search_content">w14_ex << <a href='w14_ex.html'>Previous</a> <a href='HW 2.html'>Next</a> >> HW 2<br /><h1>w15</h1>
 <p>題目一：<a href="https://mdecp2024.github.io/hw-41071205/content/Brython?src=https://gist.githubusercontent.com/41071205/00165240b4ccc84bbf65fcba5474f7e2/raw/691da4eda0c20cb2da587230085ae211f6f99c03/gistfile1.txt">1加到100</a></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">total = 0
+for i in range(1, 101):  # range(1, 101) 代表從 1 到 100
+    total += i
+
+# 輸出結果
+print(total)</pre>
 <p>題目二：<a href="https://mdecp2024.github.io/hw-41071205/content/Brython?src=https://gist.githubusercontent.com/41071205/0da72f22242e45741303d8b248c4800a/raw/1f8e080595fe0f99f3c746f21d6c391cf89f48bb/addto()">addto()</a></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def addto(start, end):
+    total = 0
+    for i in range(start, end + 1):  # 從 start 到 end（包括 end）
+        total += i
+    return total
+
+# 調用 addto 函數，計算 1 到 100 的和
+result = addto(1, 100)
+print(result)</pre>
 <p>題目三：<a href="https://mdecp2024.github.io/hw-41071205/content/Brython?src=https://gist.githubusercontent.com/41071205/0a69708dc238cb496c9f658e7013d656/raw/4f93cfe5d18970e9c0c59f96e055a7b71131f253/add_only_even()">add_only_even(1, 100)</a></p>
-<p>題目四：<a href="https://mdecp2024.github.io/hw-41071205/content/Brython?src=https://gist.githubusercontent.com/41071205/d5e5cf8c42c4235f081221772b844d23/raw/360b669ad4c6c03a6362c9e0b9ed63a3db5e6c8a/add_avoid_8()">add_avoid_8()</a></p><br />w14_ex << <a href='w14_ex.html'>Previous</a> <a href='HW 2.html'>Next</a> >> HW 2</div>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def add_only_even(start, end):
+    total = 0
+    for i in range(start, end + 1):
+        if i % 2 == 0:  # 判斷 i 是否为偶數
+            total += i
+    return total
+
+# 調用 add_only_even 函數，計算從 1 到 100 之間所有偶數的和
+result = add_only_even(1, 100)</pre>
+<p>題目四：<a href="https://mdecp2024.github.io/hw-41071205/content/Brython?src=https://gist.githubusercontent.com/41071205/d5e5cf8c42c4235f081221772b844d23/raw/360b669ad4c6c03a6362c9e0b9ed63a3db5e6c8a/add_avoid_8()">add_avoid_8()</a></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def add_aviod_8(start, end):
+    total = 0
+    for i in range(start, end + 1):
+        # 如果數字中包含字符 '8'，跳過
+        if '8' in str(i):  # 判斷數字中是否包含字符 "8"
+            continue
+        total += i
+    return total
+
+# 調用 add_aviod_8 函數，計算從 1 到 100 之間的總和，避开包含數字 "8" 的數字</pre>
+<p></p><br />w14_ex << <a href='w14_ex.html'>Previous</a> <a href='HW 2.html'>Next</a> >> HW 2</div>
         
     <!-- footer -->
       <div class="container">
