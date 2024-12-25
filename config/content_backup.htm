@@ -295,7 +295,8 @@ ctx.moveTo(10, 10)
 ctx.lineTo(210, 210)
 ctx.stroke()
 </script>
-</p><h3>w13_ai</h3>
+</p>
+<h3>w13_ai</h3>
 <p><a href="https://mdecp2024.github.io/hw-41071205/content/Brython?src=https://gist.githubusercontent.com/41071205/a961b39ffeba9af1904277ff5b1ed8e6/raw/2e87636875edbe40350ae9db6f891cfb5a90018e/shape%2520combination">shape combination</a></p>
 <div id="brython_div1"></div>
 <!-- 導入 brython 程式庫 -->
@@ -355,7 +356,8 @@ ctx.beginPath()
 ctx.arc(cx2, cy2, radius2, 0, 2 * math.pi)  # 以方形中心為圓心，半徑為radius1
 ctx.stroke()
 </script>
-</p><h3>w13_hw</h3>
+</p>
+<h3>w13_hw</h3>
 <p><a href="https://mdecp2024.github.io/hw-41071205/content/Brython?src=https://gist.githubusercontent.com/41071205/953809cf098c7404371e8dd9f8b9d9bd/raw/fee3a378fdb737f9f6d4cbff80cf340bb0ac8365/color">add color</a></p>
 <div id="brython_div1">
 <p>這段程式碼主要利用 HTML5 的 Canvas 進行視覺化繪圖，並通過幾何運算和區域判斷來標示不同區域的顏色。以下是該程式的主要邏輯：</p>
@@ -547,10 +549,12 @@ def scan_and_draw():
 scan_and_draw()
 </script>
 </p>
-<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="315" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/i-gMnxEtiAQ?si=yDOZIz5XYP6UTF40" title="YouTube video player" width="560"></iframe></p><h3>w14_ex</h3>
+<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="315" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/i-gMnxEtiAQ?si=yDOZIz5XYP6UTF40" title="YouTube video player" width="560"></iframe></p>
+<h3>w14_ex</h3>
 <p><a href="https://mdecp2024.github.io/hw-41071205/content/Brython?src=https://gist.githubusercontent.com/41071205/827b5770b329a2ecae2570ae4b53afad/raw/7518150c2194058d5a2c46084b12002739480e40/RGB%2520circle">RGB circles</a></p>
 <p><a href="https://mdecp2024.github.io/hw-41071205/content/Brython?src=https://gist.githubusercontent.com/41071205/9bc0fa9a6666d37c196d06d92274ee88/raw/f10cdaa3ade5f7f13c1fb4a896c3fde7b7c8d6ba/move%2520RGB%2520circle">move RGB circle</a></p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"></pre><h2>w15</h2>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"></pre>
+<h2>w15</h2>
 <p>題目一：<a href="https://mdecp2024.github.io/hw-41071205/content/Brython?src=https://gist.githubusercontent.com/41071205/00165240b4ccc84bbf65fcba5474f7e2/raw/691da4eda0c20cb2da587230085ae211f6f99c03/gistfile1.txt">從1累加到100</a></p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">total = 0
 for i in range(1, 101):  # range(1, 101) 代表從 1 到 100
@@ -583,24 +587,27 @@ result = add_only_even(1, 100)</pre>
     total = 0
     for i in range(start, end + 1):
         # 如果數字中包含字符 '8'，跳過
-        if '8' in str(i):  # 判斷數字中是否包含字符 "8"
+        if '8' in str(i):  # 判斷數字中是否包含字符 "8"，str()將數據類型轉為字符串
             continue #用於跳過目前循環的剩餘部分，直接進入下一次循環
         total += i
     return total
 
 # 調用 add_aviod_8 函數，計算從 1 到 100 之間的總和，避开包含數字 "8" 的數字</pre>
 <p></p>
-<p>心得：利用for迴圈可以將計算式簡化，迅速的決定範圍。addto()可以當加法也可以是添加新字串到列表中，add_only_even()是將奇數以外的數字累加起來，add_only_odd()則相反</p><h1>HW 2</h1>
+<p>心得：利用for迴圈可以將計算式簡化，迅速的決定範圍。addto()可以當加法也可以是添加新字串到列表中，add_only_even()是將奇數以外的數字累加起來，add_only_odd()則相反，add_avoid_8()只要有數字"8"就會避開，不做計算。</p>
+<h1>HW 2</h1>
 <h4>主題: Python 的數列、判斷式與重複迴圈 (20%)<span style="background-color: #ffff99;"><br/></span></h4>
 <p style="padding-left: 30px;">Python 課程教材: <a href="https://www.learnpythonwithjupyter.com/">https://www.learnpythonwithjupyter.com/</a> - PART 2 and Part 3</p>
 <hr/>
 <p>延續 HW 1 網頁資料整理與程式練習方法, 整理下列內容 (20%):</p>
 <p>PART 2: Introduction to lists and if/else statements</p>
 <p>PART 3: Introduction to the for loop</p>
-<p>完成上述流程整理後, 請將 HW2 自評分數輸入 cp2024 自評表單中.</p><h2>HW 2 Exam</h2>
+<p>完成上述流程整理後, 請將 HW2 自評分數輸入 cp2024 自評表單中.</p>
+<h2>HW 2 Exam</h2>
 <p>每六人為一組進行協同程式練習</p>
 <p>透過 Jupyterlab 協同網頁, 輪流指定各組編寫 HW 2 相關的程式練習, 以及網頁內容 (localhost 與 Codespaces 環境)編輯.</p>
-<h1>HW 3</h1>
+<h3>w16_exam1</h3>
+<p><a href="https://mdecp2024.github.io/hw-41071205/content/Brython?src=https://gist.githubusercontent.com/41071205/bfc319c2fff8e5e28ec5789640e1692e/raw/43cb7c7a560e9dd74b2dbe98f5f97afff4053c9c/draw%2520picture">anchor</a></p><h1>HW 3</h1>
 <h4>主題: Python 的數字、演算法與迴圈 (20%)</h4>
 <p style="padding-left: 30px;">Python 課程教材: <a href="https://www.learnpythonwithjupyter.com/">https://www.learnpythonwithjupyter.com/</a> - PART 4 and Part 5</p>
 <p>完成上述流程整理後, 請將 HW3 自評分數輸入 cp2024 自評表單中.</p>
@@ -653,7 +660,8 @@ for i in range(1, 6, 2):
 </ol>
 <p></p>
 <p><img alt="" src="/images/index.html"/><img alt="" height="286" src="/images/螢幕擷取畫面 2024-10-16 113321.png" width="535"/><img alt="" height="287" src="/images/螢幕擷取畫面 2024-10-16 113820.png" width="532"/><img alt="" height="495" src="/images/螢幕擷取畫面 2024-10-16 113546.png" width="308"/></p>
-<h1>HW 4</h1>
+<h3>w16_exam2</h3>
+<p><a href="https://mdecp2024.github.io/hw-41071205/content/Brython?src=https://gist.githubusercontent.com/41071205/08c4455eeaa52bc7ad01c933980db3e8/raw/890db2227ee4bb4e3c13fb42d271fdf901195078/maze%25202">anchor</a></p><h1>HW 4</h1>
 <h4>主題: 利用 Python 控制機電模擬系統 (20%)</h4>
 <p style="padding-left: 30px;">利用 <a href="https://solvespace.com/">https://solvespace.com/</a> 建立機械系統零組件</p>
 <p style="padding-left: 30px;">利用 <a href="https://www.coppeliarobotics.com/">CoppeliaSim</a> 建立機電模擬系統</p>
@@ -665,7 +673,8 @@ for i in range(1, 6, 2):
 <h2>HW 4 Exam</h2>
 <p>每六人為一組進行協同程式練習</p>
 <p>透過 Jupyterlab 協同網頁, 輪流指定各組編寫 HW 4 相關的程式練習, 以及網頁內容 (localhost 與 Codespaces 環境)編輯.</p>
-<h1>Final Report</h1>
+<h3>w16_exam3</h3>
+<p><a href="https://mdecp2024.github.io/hw-41071205/content/Brython?src=https://gist.githubusercontent.com/41071205/0ac6f938b88a3e85672e7eb540e7d16b/raw/9c3e3957b6cd91081098e813ab7e489cb5a75851/maze%25203">exam 3</a></p><h1>Final Report</h1>
 <p>期末口頭與書面專題報告 (20%)</p>
 <p>期末口頭專題報告影片:</p>
 <p style="padding-left: 30px;">......</p>
@@ -674,8 +683,7 @@ for i in range(1, 6, 2):
 <p>電腦輔助設計與實習課程總結心得:</p>
 <p style="padding-left: 30px;">......</p>
 <p>期末報告自評成績:</p>
-<p style="padding-left: 30px;">完成上述流程後, 請將 Final Report 自評分數輸入 cp2024 自評表單中.</p>
-<h1>Brython</h1>
+<p style="padding-left: 30px;">完成上述流程後, 請將 Final Report 自評分數輸入 cp2024 自評表單中.</p><h1>Brython</h1>
 <p>從 1 累加到 100:</p>
 <p><button id="add1to100">1 add to 100</button></p>
 <!-- 導入 brython 程式庫 -->
