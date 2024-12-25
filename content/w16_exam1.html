@@ -142,7 +142,61 @@ img.add_border {
           
         </header>
     <div id="tipue_search_content">HW 2 Exam << <a href='HW 2 Exam.html'>Previous</a> <a href='HW 3.html'>Next</a> >> HW 3<br /><h1>w16_exam1</h1>
-<p><a href="https://mdecp2024.github.io/hw-41071205/content/Brython?src=https://gist.githubusercontent.com/41071205/bfc319c2fff8e5e28ec5789640e1692e/raw/43cb7c7a560e9dd74b2dbe98f5f97afff4053c9c/draw%2520picture">anchor</a></p><br />HW 2 Exam << <a href='HW 2 Exam.html'>Previous</a> <a href='HW 3.html'>Next</a> >> HW 3</div>
+<p><a href="https://mdecp2024.github.io/hw-41071205/content/Brython?src=https://gist.githubusercontent.com/41071205/bfc319c2fff8e5e28ec5789640e1692e/raw/43cb7c7a560e9dd74b2dbe98f5f97afff4053c9c/draw%2520picture">anchor</a></p>
+<p></p>
+<div id="brython_div1"></div>
+<!-- 導入 brython 程式庫 -->
+<p>
+<script src="./../cmsimde/static/brython.js"></script>
+<script src="./../cmsimde/static/brython_stdlib.js"></script>
+</p>
+<!-- 啟動 Brython -->
+<p>
+<script>
+window.onload=function(){
+brython({debug:1, pythonpath:['./../cmsimde/static/','./../downloads/py/']});
+}
+</script>
+<script type="text/python3">
+from browser import html
+from browser import document as doc
+
+canvas = html.CANVAS(width = 2000, height = 2000)
+brython_div = doc["brython_div1"]
+brython_div <= canvas
+
+ctx = canvas.getContext("2d")
+ctx.lineWidth = 2
+ctx.strokeStyle = "black"
+ctx.beginPath(12,5)
+ctx.moveTo(12,5)
+ctx.lineTo(88,5)
+ctx.stroke()
+
+ctx.beginPath(12,5)
+ctx.moveTo(12,5)
+ctx.lineTo(12,95)
+ctx.stroke()
+
+ctx.font = "20px Arial"  # 設定字體
+ctx.fillStyle = "black"  # 設定文字顏色
+
+# 在(90, 5)位置添加文字
+ctx.fillText("+X", 90,25)
+
+# 在(90, 95)位置添加文字
+ctx.fillText("+Y", 20, 110)
+
+image = html.IMG(src="https://www.ccplusmedia.com/wp-content/uploads/2019/10/creative-ad_landscape3.jpg")  # 使用線上圖片連結
+
+# 圖片下載完成後在畫布上繪製圖片
+def on_image_load(event):
+    # 圖片下載完成后，將圖片繪製到畫布上
+    ctx.drawImage(image, 90, 25, 400, 250)  # 在(100, 100)位置繪製，設置尺寸為150x150
+
+image.bind("load", on_image_load)
+</script>
+</p><br />HW 2 Exam << <a href='HW 2 Exam.html'>Previous</a> <a href='HW 3.html'>Next</a> >> HW 3</div>
         
     <!-- footer -->
       <div class="container">

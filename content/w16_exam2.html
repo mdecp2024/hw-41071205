@@ -142,7 +142,76 @@ img.add_border {
           
         </header>
     <div id="tipue_search_content">W6 << <a href='W6.html'>Previous</a> <a href='HW 4.html'>Next</a> >> HW 4<br /><h1>w16_exam2</h1>
-<p><a href="https://mdecp2024.github.io/hw-41071205/content/Brython?src=https://gist.githubusercontent.com/41071205/08c4455eeaa52bc7ad01c933980db3e8/raw/890db2227ee4bb4e3c13fb42d271fdf901195078/maze%25202">anchor</a></p><br />W6 << <a href='W6.html'>Previous</a> <a href='HW 4.html'>Next</a> >> HW 4</div>
+<p><a href="https://mdecp2024.github.io/hw-41071205/content/Brython?src=https://gist.githubusercontent.com/41071205/08c4455eeaa52bc7ad01c933980db3e8/raw/890db2227ee4bb4e3c13fb42d271fdf901195078/maze%25202">anchor</a></p>
+<p></p>
+<div id="brython_div1"></div>
+<!-- 導入 brython 程式庫 -->
+<p>
+<script src="./../cmsimde/static/brython.js"></script>
+<script src="./../cmsimde/static/brython_stdlib.js"></script>
+</p>
+<!-- 啟動 Brython -->
+<p>
+<script>
+window.onload=function(){
+brython({debug:1, pythonpath:['./../cmsimde/static/','./../downloads/py/']});
+}
+</script>
+<script type="text/python3">
+from browser import html
+from browser import document as doc
+
+canvas = html.CANVAS(width=2000, height=2000)
+brython_div = doc["brython_div1"]
+brython_div <= canvas
+
+ctx = canvas.getContext("2d")
+
+# 简化的绘制直线函数
+def draw_line(x1, y1, x2, y2, line_width=2, stroke_style="black"):
+    ctx.lineWidth = line_width
+    ctx.strokeStyle = stroke_style
+    ctx.beginPath()
+    ctx.moveTo(x1, y1)
+    ctx.lineTo(x2, y2)
+    ctx.stroke()
+
+# 绘制第一部分的线条
+draw_line(12, 5, 88, 5)
+draw_line(12, 5, 12, 95)
+
+# 绘制短线条（红色）
+draw_line(12, 5, 12, 6, line_width=5, stroke_style="red")
+draw_line(12, 5, 13, 5, line_width=5, stroke_style="red")
+
+# 绘制文本
+ctx.font = "20px Arial"
+ctx.fillStyle = "red"
+ctx.fillText("(12,5)", 20, 35)
+
+# 绘制蓝色多条线条
+draw_line(130, 130, 170, 130, stroke_style="blue")
+draw_line(190, 130, 230, 130, stroke_style="blue")
+draw_line(230, 130, 230, 230, stroke_style="blue")
+draw_line(230, 230, 190, 230, stroke_style="blue")
+draw_line(170, 230, 130, 230, stroke_style="blue")
+draw_line(130, 230, 130, 130, stroke_style="blue")
+
+# 绘制矩形内部的线条
+draw_line(150, 150, 210, 150, stroke_style="blue")
+draw_line(210, 150, 210, 170, stroke_style="blue")
+draw_line(170, 150, 170, 170, stroke_style="blue")
+draw_line(170, 170, 130, 170, stroke_style="blue")
+draw_line(190, 170, 190, 190, stroke_style="blue")
+draw_line(190, 190, 210, 190, stroke_style="blue")
+draw_line(210, 190, 210, 230, stroke_style="blue")
+draw_line(170, 170, 150, 170, stroke_style="blue")
+draw_line(150, 210, 150, 190, stroke_style="blue")
+draw_line(150, 190, 190, 190, stroke_style="blue")
+draw_line(170, 230, 170, 210, stroke_style="blue")
+draw_line(170, 210, 190, 210, stroke_style="blue")
+</script>
+</p><br />W6 << <a href='W6.html'>Previous</a> <a href='HW 4.html'>Next</a> >> HW 4</div>
         
     <!-- footer -->
       <div class="container">

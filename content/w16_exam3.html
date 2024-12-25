@@ -142,7 +142,98 @@ img.add_border {
           
         </header>
     <div id="tipue_search_content">HW 4 Exam << <a href='HW 4 Exam.html'>Previous</a> <a href='Final Report.html'>Next</a> >> Final Report<br /><h1>w16_exam3</h1>
-<p><a href="https://mdecp2024.github.io/hw-41071205/content/Brython?src=https://gist.githubusercontent.com/41071205/0ac6f938b88a3e85672e7eb540e7d16b/raw/9c3e3957b6cd91081098e813ab7e489cb5a75851/maze%25203">anchor</a></p><br />HW 4 Exam << <a href='HW 4 Exam.html'>Previous</a> <a href='Final Report.html'>Next</a> >> Final Report</div>
+<p><a href="https://mdecp2024.github.io/hw-41071205/content/Brython?src=https://gist.githubusercontent.com/41071205/0ac6f938b88a3e85672e7eb540e7d16b/raw/9c3e3957b6cd91081098e813ab7e489cb5a75851/maze%25203">anchor</a></p>
+<p></p>
+<div id="brython_div1"></div>
+<!-- 導入 brython 程式庫 -->
+<p>
+<script src="./../cmsimde/static/brython.js"></script>
+<script src="./../cmsimde/static/brython_stdlib.js"></script>
+</p>
+<!-- 啟動 Brython -->
+<p>
+<script>
+window.onload=function(){
+brython({debug:1, pythonpath:['./../cmsimde/static/','./../downloads/py/']});
+}
+</script>
+<script type="text/python3">
+from browser import html
+from browser import document as doc
+
+canvas = html.CANVAS(width=2000, height=2000)
+brython_div = doc["brython_div1"]
+brython_div <= canvas
+
+ctx = canvas.getContext("2d")
+
+# 简化的绘制直线函数
+def draw_line(x1, y1, x2, y2, line_width=2, stroke_style="black"):
+    ctx.lineWidth = line_width
+    ctx.strokeStyle = stroke_style
+    ctx.beginPath()
+    ctx.moveTo(x1, y1)
+    ctx.lineTo(x2, y2)
+    ctx.stroke()
+
+# 绘制第一部分的线条
+draw_line(12, 5, 88, 5)
+draw_line(12, 5, 12, 95)
+
+# 绘制短线条（红色）
+draw_line(12, 5, 12, 6, line_width=5, stroke_style="red")
+draw_line(12, 5, 13, 5, line_width=5, stroke_style="red")
+
+# 绘制文本
+ctx.font = "20px Arial"
+ctx.fillStyle = "red"
+ctx.fillText("(12,5)", 20, 35)
+
+# 绘制蓝色多条线条
+draw_line(130, 130, 170, 130, stroke_style="blue")
+draw_line(190, 130, 230, 130, stroke_style="blue")
+draw_line(230, 130, 230, 230, stroke_style="blue")
+draw_line(230, 230, 190, 230, stroke_style="blue")
+draw_line(170, 230, 130, 230, stroke_style="blue")
+draw_line(130, 230, 130, 130, stroke_style="blue")
+
+# 绘制矩形内部的线条
+draw_line(150, 150, 210, 150, stroke_style="blue")
+draw_line(210, 150, 210, 170, stroke_style="blue")
+draw_line(170, 150, 170, 170, stroke_style="blue")
+draw_line(170, 170, 130, 170, stroke_style="blue")
+draw_line(190, 170, 190, 190, stroke_style="blue")
+draw_line(190, 190, 210, 190, stroke_style="blue")
+draw_line(210, 190, 210, 230, stroke_style="blue")
+draw_line(170, 170, 150, 170, stroke_style="blue")
+draw_line(150, 210, 150, 190, stroke_style="blue")
+draw_line(150, 190, 190, 190, stroke_style="blue")
+draw_line(170, 230, 170, 210, stroke_style="blue")
+draw_line(170, 210, 190, 210, stroke_style="blue")
+
+# 绘制文本
+ctx.font = "12px Arial"
+ctx.fillStyle = "red"
+ctx.fillText("入口", 170, 110)
+ctx.fillText("出口", 170, 260)
+
+draw_line(180, 130, 180, 140, stroke_style="red")
+draw_line(180, 140, 220, 140, stroke_style="red")
+draw_line(220, 140, 220, 180, stroke_style="red")
+draw_line(220, 180, 200, 180, stroke_style="red")
+draw_line(200, 180, 200, 160, stroke_style="red")
+draw_line(200, 160, 180, 160, stroke_style="red")
+draw_line(180, 160, 180, 180, stroke_style="red")
+draw_line(180, 180, 140, 180, stroke_style="red")
+draw_line(140, 180, 140, 220, stroke_style="red")
+draw_line(140, 220, 160, 220, stroke_style="red")
+draw_line(160, 220, 160, 200, stroke_style="red")
+draw_line(160, 200, 200, 200, stroke_style="red")
+draw_line(200, 200, 200, 220, stroke_style="red")
+draw_line(200, 220, 180, 220, stroke_style="red")
+draw_line(180, 220, 180, 230, stroke_style="red")
+</script>
+</p><br />HW 4 Exam << <a href='HW 4 Exam.html'>Previous</a> <a href='Final Report.html'>Next</a> >> Final Report</div>
         
     <!-- footer -->
       <div class="container">
