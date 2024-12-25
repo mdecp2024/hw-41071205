@@ -142,7 +142,7 @@ img.add_border {
           
         </header>
     <div id="tipue_search_content">HW 2 Exam << <a href='HW 2 Exam.html'>Previous</a> <a href='HW 3.html'>Next</a> >> HW 3<br /><h1>w16_exam1</h1>
-<p><a href="https://mdecp2024.github.io/hw-41071205/content/Brython?src=https://gist.githubusercontent.com/41071205/bfc319c2fff8e5e28ec5789640e1692e/raw/497b0453c78947e42a5045d3c4edad67968df41d/draw%2520picture">anchor</a></p>
+<p><a href="https://mdecp2024.github.io/hw-41071205/content/Brython?src=https://gist.githubusercontent.com/41071205/bfc319c2fff8e5e28ec5789640e1692e/raw/fc75d489e8c7f2008e52ebcd5db9ccf580eb39e1/draw%2520picture">draw shapes</a></p>
 <p></p>
 <div id="brython_div1"></div>
 <!-- 導入 brython 程式庫 -->
@@ -201,38 +201,38 @@ y = 5
 # 畫橙色六邊形
 ctx.beginPath()
 ctx.fillStyle = "#EBB000"
-ctx.moveTo(x + 40, y + 63)
-ctx.lineTo(x + 60, y + 33)
-ctx.lineTo(x + 90, y + 33)
-ctx.lineTo(x + 110,y + 63)
-ctx.lineTo(x + 90, y + 93)
-ctx.lineTo(x + 60, y + 93)
+ctx.moveTo(x + 40, y + 70)
+ctx.lineTo(x + 60, y + 40)
+ctx.lineTo(x + 90, y + 40)
+ctx.lineTo(x + 110,y + 70)
+ctx.lineTo(x + 90, y + 100)
+ctx.lineTo(x + 60, y + 100)
 ctx.closePath()
 ctx.fill()
 
 # 畫綠色菱形
 ctx.beginPath()
 ctx.fillStyle = "#2CB05F"
-ctx.moveTo(x + 130, y + 63)
-ctx.lineTo(x + 150, y + 33)
-ctx.lineTo(x + 170, y + 63)
-ctx.lineTo(x + 150, y + 93)
+ctx.moveTo(x + 130, y + 70)
+ctx.lineTo(x + 150, y + 40)
+ctx.lineTo(x + 170, y + 70)
+ctx.lineTo(x + 150, y + 100)
 ctx.closePath()
 ctx.fill()
 
 # 藍色三角形 (頂點在菱形右側，方向朝下)
 ctx.beginPath()
 ctx.fillStyle = "#73B7FF"
-ctx.moveTo(x + 174, y + 63)  # 頂點在菱形右側
-ctx.lineTo(x + 154, y + 93)  # 左下角
-ctx.lineTo(x + 194, y + 93)  # 右下角
+ctx.moveTo(x + 174, y + 70)  # 頂點在菱形右側
+ctx.lineTo(x + 154, y + 100)  # 左下角
+ctx.lineTo(x + 194, y + 100)  # 右下角
 ctx.closePath()
 ctx.fill()
 
 # 畫粉紅色圓形
 ctx.beginPath()
 ctx.fillStyle = "#FF458C"
-ctx.arc(x + 220, y + 63, 20, 0, 2 * 3.14159)
+ctx.arc(x + 220, y + 70, 20, 0, 2 * 3.14159)
 ctx.fill()
 
 # 畫黃色正方形
